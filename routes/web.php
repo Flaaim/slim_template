@@ -1,8 +1,5 @@
 <?php 
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use App\Controllers\HomeController;
 
-$app->get('/', function(Request $request, Response $response){
-    return $this->get('view')->render($response, 'home.twig');
-});
+$app->get('/', HomeController::class . ':index')->setName('home');

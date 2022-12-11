@@ -20,5 +20,5 @@ $container->set('db', function(){
 $container->set(HomeController::class, function($container){
     $view = $container->get('view');
     $db = $container->get('db');
-    return new HomeController($view, $db, $user);
+    return new HomeController($view, $db);
 });
